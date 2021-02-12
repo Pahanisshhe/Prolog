@@ -1,0 +1,3 @@
+/*task6*/
+sister(X,Y):-father(Z,X),father(Z,Y),woman(X).
+sister(X):-sister(Y,X),X\=Y,write(Y),nl,fail.
