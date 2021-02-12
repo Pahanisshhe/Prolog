@@ -1,3 +1,3 @@
 /*task6*/
-sister(X,Y):-father(Z,X),father(Z,Y),woman(X).
-sister(X):-sister(Y,X),X\=Y,write(Y),nl,fail.
+sister(X,Y):-father(Z,X),father(Z,Y),X\=Y,woman(X).
+sister(X):-sister(Y,X),write(Y),nl,fail.
