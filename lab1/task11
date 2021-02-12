@@ -1,0 +1,2 @@
+/*task11*/
+grand_ma_and_son(X,Y):-grand_son(X,Y),woman(Y);grand_son(Y,X),woman(X).
