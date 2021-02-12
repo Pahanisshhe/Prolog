@@ -1,3 +1,4 @@
 /*task7*/
-b_s(X,Y):-(brother(X,Y),sister(Y,X);brother(X,Y),brother(Y,X);sister(X,Y),sister(Y,X)),X\=Y.
+b_s(X,Y):-father(Z,X),father(Z,Y),X\=Y.
 b_s(X):-b_s(Y,X),write(Y),nl,fail.
+
