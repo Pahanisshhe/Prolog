@@ -1,0 +1,3 @@
+/*task1*/
+men:-man(X),write(X),nl,fail.
+women:-woman(X),write(X),nl,fail.
