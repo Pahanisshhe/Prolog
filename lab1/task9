@@ -1,0 +1,3 @@
+/*task9*/
+grand_son(X,Y):-parent(Z,X),parent(Y,Z),man(X).
+grand_son(X):-grand_son(Y,X),write(Y),nl,fail.
