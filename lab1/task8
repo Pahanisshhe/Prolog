@@ -1,0 +1,2 @@
+/*task8*/
+grand_pa(X, Y):-father(X,Z),father(Z,Y).
