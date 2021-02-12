@@ -1,0 +1,2 @@
+/*task13*/
+aunt(X,Y):-parent(Z,Y),sister(X,Z).
