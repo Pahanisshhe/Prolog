@@ -1,3 +1,0 @@
-/*task5*/
-brother(X,Y):-mother(Z,X),mother(Z,Y),man(X),X\=Y.
-brother(X):-brother(Y,X),write(Y),nl,fail.
