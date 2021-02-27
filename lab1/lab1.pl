@@ -52,3 +52,6 @@ mother(X):-mother(Y,X),write(Y).
 father(X,Y):-parent(X,Y),man(X).
 father(X):-father(Y,X),write(Y).
 
+%task5
+brother(X,Y):-mother(Z,X),mother(Z,Y),man(X),X\=Y.
+brothers(X):-brother(Y,X),write(Y),nl,fail.
