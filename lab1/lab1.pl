@@ -59,3 +59,7 @@ brothers(X):-brother(Y,X),write(Y),nl,fail.
 %task6
 sister(X,Y):-father(Z,X),father(Z,Y),X\=Y,woman(X).
 sisters(X):-sister(Y,X),write(Y),nl,fail.
+
+%task7
+b_s(X,Y):-father(Z,X),father(Z,Y),X\=Y.
+b_s(X):-b_s(Y,X),write(Y),nl,fail.
