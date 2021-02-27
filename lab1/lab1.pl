@@ -44,3 +44,8 @@ women:-woman(X),write(X),nl,fail.
 %task2
 children(X):-parent(X,Y),write(Y),nl,fail.
 
+%task3
+mother(X,Y):-parent(X,Y),woman(X).
+mother(X):-mother(Y,X),write(Y).
+
+
