@@ -55,3 +55,7 @@ father(X):-father(Y,X),write(Y).
 %task5
 brother(X,Y):-mother(Z,X),mother(Z,Y),man(X),X\=Y.
 brothers(X):-brother(Y,X),write(Y),nl,fail.
+
+%task6
+sister(X,Y):-father(Z,X),father(Z,Y),X\=Y,woman(X).
+sisters(X):-sister(Y,X),write(Y),nl,fail.
