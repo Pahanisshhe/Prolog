@@ -27,3 +27,7 @@ fib1(N,X,_,N,X):-!.
 fib1(I,F1,F0,N,X):- I1 is I+1, F2 is F1+F0, fib1(I1,F2,F1,N,X).
 fib1(1,1):-!.
 fib1(N,X):-fib1(2,1,1,N,X).
+
+%task7
+sum(0,0):-!.
+sum(N,S):-N1 is N div 10, sum(N1,S1), S is S1+N mod 10.
