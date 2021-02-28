@@ -31,3 +31,8 @@ fib1(N,X):-fib1(2,1,1,N,X).
 %task7
 sum(0,0):-!.
 sum(N,S):-N1 is N div 10, sum(N1,S1), S is S1+N mod 10.
+
+%task8
+sum1(N,S):-sum(N,0,S).
+sum1(0,S,S):-!.
+sum1(A,Sum,S):-Ad is A mod 10, Am is A mod 10, Sum1 is Sum + Am, sum(Ad, Sum1, S).
