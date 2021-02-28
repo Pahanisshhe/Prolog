@@ -53,6 +53,7 @@ kolvo(N,K):-N1 is N div 10, kolvo(N1,K1), N2 is N mod 10,
     ((N2>3,1 is N2 mod 2) -> K is K1 + 1; K is K1).
 
 %task12
-kolvo_L3(0,0):-!.
-kolvo_L3(N,K):-N1 is N div 10, kolvo_L3(N1,K1), N2 is N mod 10,
-    (N2<3  -> K is K1 + 1; K is K1).
+gcd(N,M,D):-max(N,M,X),gcd(N,M,X,D).
+gcd(_,_,1,1):-!.
+gcd(N,M,D,MD):-D1 is D-1, gcd(N,M,D1,MD1),
+    ((0 is N mod D, 0 is M mod D, D>MD1) -> MD is D; MD is MD1).
