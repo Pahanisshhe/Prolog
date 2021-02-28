@@ -83,3 +83,7 @@ grand_pa_and_son(X,Y):-grand_pa(X,Y),grand_son(Y,X);grand_pa(Y,X),grand_son(X,Y)
 
 %task11
 grand_ma_and_son(X,Y):-grand_son(X,Y),woman(Y);grand_son(Y,X),woman(X).
+
+%task12
+uncle(X,Y):-parent(Z,Y),brother(X,Z).
+uncles(X):-uncle(Y,X),write(Y),nl,fail.
