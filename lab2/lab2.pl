@@ -91,3 +91,37 @@ decor(бедрок,0).
 decor(лава,0).
 decor(магма,0).
 
+%task3
+pr1():-q1(A1),
+    (A1=1 ->
+         (q2(A21),
+         ((A21=1;A21=3;A21=4) ->
+               (world(X1,A1),tool(X1,A21),
+                      nl,write("Это "),write(X1),nl);
+               (q3(A31),world(X2,A1),tool(X2,A21),color(X2,A31),
+                      nl,write("Это "),write(X2),nl)));
+      (A1=4 ->
+           (q2(A22),
+           (A22=4 ->
+                (world(X3,A1),tool(X3,A22),
+                      nl,write("Это "),write(X3),nl);
+                (q3(A32),world(X4,A1),tool(X4,A22),color(X4,A32),
+                      nl,write("Это "),write(X4),nl)));
+        (A1=3 ->
+            (q3(A33),
+            (A33=6 ->
+                 (world(X5,A1),color(X5,A33),
+                       nl,write("Это "),write(X5),nl);
+                 (q4(A43),world(X6,A1),color(X6,A33),decor(X6,A43),
+                       nl,write("Это "),write(X6),nl))));
+          (
+              (q2(A24),
+              ((A24=2;A24=3) ->
+                   (world(X7,A1),tool(X7,A24),
+                        nl,write("Это "),write(X7),nl);
+                   (q3(A34),
+                   (A34=5 ->
+                         (world(X8,A1),tool(X8,A24),color(X8,A34),
+                               nl,write("Это "),write(X8),nl);
+                         (q4(A44),world(X9,A1),tool(X9,A24),color(X9,A34),decor(X9,A44),
+                               nl,write("Это "),write(X9),nl)))))))).
