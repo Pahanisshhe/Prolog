@@ -1,4 +1,3 @@
-%base of facts
 man(konstantin).
 man(sergey).
 man(matvey).
@@ -7,6 +6,7 @@ man(anton).
 man(roman).
 man(andrey).
 man(zahar).
+man(bogdan).
 
 woman(mariya).
 woman(ekaterina).
@@ -17,15 +17,20 @@ woman(elena).
 woman(alisa).
 woman(kristina).
 woman(yulia).
+woman(sofiya).
 
 parent(konstantin,kseniya).
 parent(mariya,kseniya).
 parent(sergey,anton).
+parent(sergey,sofiya).
 parent(ekaterina,anton).
+parent(ekaterina,sofiya).
 parent(matvey,elena).
 parent(alena,elena).
 parent(victor,roman).
+parent(victor,bogdan).
 parent(anna,roman).
+parent(anna,bogdan).
 parent(anton,andrey).
 parent(anton,zahar).
 parent(anton,alisa).
@@ -36,6 +41,7 @@ parent(roman,kristina).
 parent(roman,yulia).
 parent(elena,kristina).
 parent(elena,yulia).
+
 
 %task1
 men:-man(X),write(X),nl,fail.
