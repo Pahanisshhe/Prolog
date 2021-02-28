@@ -87,3 +87,7 @@ grand_ma_and_son(X,Y):-grand_son(X,Y),woman(Y);grand_son(Y,X),woman(X).
 %task12
 uncle(X,Y):-parent(Z,Y),brother(X,Z).
 uncles(X):-uncle(Y,X),write(Y),nl,fail.
+
+%task13
+aunt(X,Y):-parent(Z,Y),sister(X,Z).
+aunts(X):-aunt(Y,X),write(Y),nl,fail.
