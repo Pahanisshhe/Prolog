@@ -40,3 +40,9 @@ sum1(A,Sum,S):-Ad is A div 10, Am is A mod 10, Sum1 is Sum + Am, sum1(Ad, Sum1, 
 %task9
 mul(0,0):-!.
 mul(N,M):-N1 is N div 10, (N>10 -> mul(N1,M1); M1 is 1), M is M1*(N mod 10).
+
+%task10
+mul1(0,0):-!.
+mul1(N,M):-mul1(N,1,M).
+mul1(0,M,M):-!.
+mul1(N,Mul,M):-N1 is N div 10, N2 is N mod 10, Mul1 is Mul*N2, mul1(N1,Mul1,M).
