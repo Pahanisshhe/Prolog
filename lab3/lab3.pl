@@ -20,3 +20,10 @@ fact1(N,X):-fact1(0,1,N,X).
 fib(1,1):-!.
 fib(2,1):-!.
 fib(N,X):-N1 is N-1, fib(N1,X1), N2 is N1-1, fib(N2,X2), X is X1 + X2.
+
+%task6
+%номер, текущий, предыдущий
+fib1(N,X,_,N,X):-!.
+fib1(I,F1,F0,N,X):- I1 is I+1, F2 is F1+F0, fib1(I1,F2,F1,N,X).
+fib1(1,1):-!.
+fib1(N,X):-fib1(2,1,1,N,X).
