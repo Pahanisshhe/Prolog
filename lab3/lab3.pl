@@ -51,3 +51,8 @@ mul1(N,Mul,M):-N1 is N div 10, N2 is N mod 10, Mul1 is Mul*N2, mul1(N1,Mul1,M).
 kolvo(0,0):-!.
 kolvo(N,K):-N1 is N div 10, kolvo(N1,K1), N2 is N mod 10,
     ((N2>3,1 is N2 mod 2) -> K is K1 + 1; K is K1).
+
+%task12
+kolvo_L3(0,0):-!.
+kolvo_L3(N,K):-N1 is N div 10, kolvo_L3(N1,K1), N2 is N mod 10,
+    (N2<3  -> K is K1 + 1; K is K1).
