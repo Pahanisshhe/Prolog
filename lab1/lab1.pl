@@ -74,3 +74,6 @@ grand_sons(X):-grand_son(Y,X),write(Y),nl,fail.
 
 %task10
 grand_pa_and_son(X,Y):-grand_pa(X,Y),grand_son(Y,X);grand_pa(Y,X),grand_son(X,Y).
+
+%task11
+grand_ma_and_son(X,Y):-grand_son(X,Y),woman(Y);grand_son(Y,X),woman(X).
