@@ -57,3 +57,9 @@ gcd(N,M,D):-max(N,M,X),gcd(N,M,X,D).
 gcd(_,_,1,1):-!.
 gcd(N,M,D,MD):-D1 is D-1, gcd(N,M,D1,MD1),
     ((0 is N mod D, 0 is M mod D, D>MD1) -> MD is D; MD is MD1).
+
+%число, делитель, флаг
+prime_number(_,2,_):-!.
+prime_number(N,D,F):-D1 is D-1, prime_number(N,D1,F1),
+    F1 is 1, (0 is N mod D -> F is 0; F is 1).
+prime_number(N):-D is N div 2, prime_number(N,D,1).
