@@ -71,3 +71,6 @@ grand_pas(X):-grand_pa(Y,X),write(Y),nl,fail.
 %task9
 grand_son(X,Y):-parent(Z,X),parent(Y,Z),man(X).
 grand_sons(X):-grand_son(Y,X),write(Y),nl,fail.
+
+%task10
+grand_pa_and_son(X,Y):-grand_pa(X,Y),grand_son(Y,X);grand_pa(Y,X),grand_son(X,Y).
