@@ -63,3 +63,7 @@ sisters(X):-sister(Y,X),write(Y),nl,fail.
 %task7
 b_s(X,Y):-father(Z,X),father(Z,Y),X\=Y.
 b_s(X):-b_s(Y,X),write(Y),nl,fail.
+
+%task8
+grand_pa(X,Y):-father(X,Z),parent(Z,Y).
+grand_pas(X):-grand_pa(Y,X),write(Y),nl,fail.
