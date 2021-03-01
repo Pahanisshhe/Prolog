@@ -13,6 +13,8 @@ empty_list([]).
 add_list(_,[]):-!.
 add_list(Elem,[_|T]):-add_list(Elem,T), T is [Elem].
 
+add_list_top(N,[H|T],[H1,T1]):- N>0 -> (H1 is H, N1 is N-1, add_list_top(N1,T,T1));!.
+
 cycle_2_right(N):-read_list(N,List),
     Numb1 is N-1, %последний
     Numb2 is N-2, %предпоследний
@@ -20,8 +22,9 @@ cycle_2_right(N):-read_list(N,List),
     list_el_numb(List,Elem2,Numb2),
     append1([],[Elem2,Elem1],NewList1),
     %write_list(NewList)
-
-    append1(NewList1,List,NewList),
+    add_list_top(Numb2,List,NewList2),
+    append1(NewList1,NewList2,NewList),
     write_list(NewList)
     .
+
 
