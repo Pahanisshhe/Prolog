@@ -113,3 +113,25 @@ kat(N,I,Length,Length1):-
          Inext is I-1,
          LengthNext is Length+1,
          kat(Nnext,Inext,LengthNext,Length1)).
+
+%task14
+sum_prim_del:-
+    write("N"),nl,
+    read(N),
+    sum_prim_del(N,1,0,Sum),
+    nl,write("Sum: "), write(Sum).
+
+del(N,D):-
+    0 is N mod D.
+
+sum_prim_del(N,N,CurSum,Sum):-
+    prime_number(N) ->
+        (Sum is CurSum+N,!);
+        (Sum is CurSum,!).
+
+sum_prim_del(N,D,CurSum,Sum):-
+    del(N,D) ->
+        (prime_number(D),
+         Dnext is D+1,
+         NewSum is CurSum+D,
+         sum_prim_del(N,Dnext,NewSum,Sum)).
