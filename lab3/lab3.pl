@@ -64,6 +64,7 @@ prime_number(N,D,F):-D1 is D-1, prime_number(N,D1,F1),
     F1 is 1, (0 is N mod D -> F is 0; F is 1).
 prime_number(N):-D is N div 2, prime_number(N,D,1).
 
+%количество делителей числа
 count_del(_,1,1):-!.
 count_del(N,D,K):-D1 is D-1, count_del(N,D1,K1),
     (0 is N mod D -> K is K1+1; K is K1).
