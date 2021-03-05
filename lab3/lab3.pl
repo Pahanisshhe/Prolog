@@ -70,3 +70,46 @@ count_del(N,D,K):-D1 is D-1, count_del(N,D1,K1),
     (0 is N mod D -> K is K1+1; K is K1).
 count_del(1,1):-!.
 count_del(N,K):-count_del(N,N,K).
+
+%task13
+max_kat:-
+    max_kat(2,2,0).
+
+max_kat(1000000,MaxN,Max):-
+    write(MaxN),nl,
+    write(Max),nl,!.
+
+max_kat(N,MaxN,Max):-
+    kat(N,1000000,0,Length),
+    Length>Max ->
+        (NewMaxN is N,
+         NewMax is Length,
+         Nnext is N+1,
+         max_kat(Nnext,NewMaxN,NewMax));
+        (NewMaxN is MaxN,
+         NewMax is Max,
+         Nnext is N+1,
+         max_kat(Nnext,NewMaxN,NewMax)).
+
+
+kat(1,_,Length,Length):-
+    %write(1),nl,
+    %write("Length: "), write(Length),
+    !.
+
+kat(_,0,Length,Length):-
+    %write(N),nl,
+    %write("Length: "), write(Length),
+    !.
+
+kat(N,I,Length,Length1):-
+    %write(N),nl,
+    (0 is N mod 2) ->
+        (Nnext is N div 2,
+         Inext is I-1,
+         LengthNext is Length+1,
+         kat(Nnext,Inext,LengthNext,Length1));
+        (Nnext is 3*N+1,
+         Inext is I-1,
+         LengthNext is Length+1,
+         kat(Nnext,Inext,LengthNext,Length1)).
