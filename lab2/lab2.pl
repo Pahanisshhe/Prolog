@@ -91,6 +91,38 @@ decor(бедрок,0).
 decor(лава,0).
 decor(магма,0).
 
+q1(A):-write("В каком мире можно найти блок?"),nl,
+       write("1. обычном"),nl,
+       write("2. ад"),nl,
+       write("3. край"),nl,
+       write("4. в более чем 1"),nl,
+       read(A).
+
+q2(A):-write("Какой инструмент наиболее эффективен?"),nl,
+       write("1. кирка"),nl,
+       write("2. лопата"),nl,
+       write("3. топор"),nl,
+       write("4. ведро"),nl,
+       read(A).
+
+q3(A):-write("Каким цветом преимущественно обладает блок?"),nl,
+       write("1. коричневый"),nl,
+       write("2. сине-фиолетовый"),nl,
+       write("3. темносерый"),nl,
+       write("4. красный"),nl,
+       write("5. белый"),nl,
+       write("6. желтый"),nl,
+       read(A).
+
+q4(A):-write("Это декоративный блок?"),nl,
+       write("1. да"),nl,
+       write("2. нет"),nl,
+       read(A).
+
+pr():-q1(A1),q2(A2),q3(A3),q4(A4),
+    world(X,A1),tool(X,A2),color(X,A3),decor(X,A4),
+    nl,write("Это "),write(X),nl.
+
 %task3
 pr1():-q1(A1),
     (A1=1 ->
