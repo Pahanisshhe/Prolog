@@ -60,6 +60,12 @@ min_list_down([H|T],M,Min):-
     (H < M -> M1 = H ; M1 = M)),
     min_list_down(T,M1,Min).
 
+%task8
+pr_min :- 
+    write("Введите число элементов: "), read(N), 
+    read_list(N,List),
+    min_list_up(List,Min), 
+    write("Минимальный элемент: "), write(Min).
 
 
 
