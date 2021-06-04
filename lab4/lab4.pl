@@ -47,10 +47,18 @@ pr_num_elem :- write("Такого номера нет").
 %task6
 min_list_up([],0):-!.
 min_list_up([H|T],Min):- 
-     min_list_up(T,Min1),
-     (Min1 = 0 -> Min = H ; 
-     (H < Min1 -> Min = H ; Min = Min1)).
-
+    min_list_up(T,Min1),
+    (Min1 = 0 -> Min = H ; 
+    (H < Min1 -> Min = H ; Min = Min1)).
+    
+%task7
+min_list_down(List,Min):- 
+    min_list_down(List,0,Min).
+min_list_down([],Min,Min):-!.
+min_list_down([H|T],M,Min):- 
+    (M = 0 -> M1 = H ; 
+    (H < M -> M1 = H ; M1 = M)),
+    min_list_down(T,M1,Min).
 
 
 
