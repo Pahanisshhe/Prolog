@@ -34,3 +34,18 @@ proga_elem :-
     list_el_numb(List,Elem,Number),
     write("Позиция элемента: "), write(Number),!.
 proga_elem :- write("Такого элемента нет").
+
+%task5
+proga_num_elem :- 
+    write("Введите число элементов: "), read(N), 
+    read_list(N,List),
+    write("Введите позицию элемента: "), read(Number), nl,
+    list_el_numb(List,Elem,Number),
+    write("Элемент: "), write(Elem),!.
+proga_num_elem :- write("Такого номера нет").
+
+
+
+
+
+
