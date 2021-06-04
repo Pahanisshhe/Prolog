@@ -113,4 +113,7 @@ count_elem([H|T], H, Count):-
 count_elem([_|T], Elem, Count):-
     count_elem(T, Elem, Count1), Count is Count1 + 0.
 
-
+%task17
+length_list([],0):-!.
+length_list([_|T],Length):- 
+    length_list(T,Length1),Length is Length1 + 1.
