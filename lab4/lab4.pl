@@ -90,6 +90,10 @@ delete_elem([_|T],Number,Number, T):-!.
 delete_elem([H|T],Number, I,[H|T1]):-
     I1 is I + 1, delete_elem(T,Number,I1,T1).
 
+%task13
+delete_all([], _, []):-!.
+delete_all([Elem|T], Elem, List):- delete_all(T, Elem, List),!.
+delete_all([H|T], Elem,[H|List]):- delete_all(T, Elem, List).
 
 
 
