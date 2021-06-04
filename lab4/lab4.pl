@@ -67,5 +67,8 @@ pr_min :-
     min_list_up(List,Min), 
     write("Минимальный элемент: "), write(Min).
 
+%task9
+in_list([El|_],El):-!.
+in_list([_|T],El):- in_list(T,El).
 
 
