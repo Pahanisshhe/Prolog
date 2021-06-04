@@ -95,6 +95,11 @@ delete_all([], _, []):-!.
 delete_all([Elem|T], Elem, List):- delete_all(T, Elem, List),!.
 delete_all([H|T], Elem,[H|List]):- delete_all(T, Elem, List).
 
+%task14
+check_elem([H|T]):- check_elem(H,T), check_elem(T).
+check_elem([]):-!.
+check_elem(_,[]):-!.
+check_elem(Elem,[H|T]):- Elem \= H, check_elem(Elem,T).
 
 
 
