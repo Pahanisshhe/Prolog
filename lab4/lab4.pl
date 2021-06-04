@@ -27,23 +27,29 @@ list_el_numb([H|_],H,Number,Number):-!.
 list_el_numb([_|T],Elem,I,Number):-
     I1 is I + 1, list_el_numb(T,Elem,I1,Number).
 
-proga_elem :- 
+pr_elem :- 
     write("Введите число элементов: "), read(N), 
     read_list(N,List),
     write("Введите элемент: "), read(Elem), nl,
     list_el_numb(List,Elem,Number),
     write("Позиция элемента: "), write(Number),!.
-proga_elem :- write("Такого элемента нет").
+pr_elem :- write("Такого элемента нет").
 
 %task5
-proga_num_elem :- 
+pr_num_elem :- 
     write("Введите число элементов: "), read(N), 
     read_list(N,List),
     write("Введите позицию элемента: "), read(Number), nl,
     list_el_numb(List,Elem,Number),
     write("Элемент: "), write(Elem),!.
-proga_num_elem :- write("Такого номера нет").
+pr_num_elem :- write("Такого номера нет").
 
+%task6
+min_list_up([],0):-!.
+min_list_up([H|T],Min):- 
+     min_list_up(T,Min1),
+     (Min1 = 0 -> Min = H ; 
+     (H < Min1 -> Min = H ; Min = Min1)).
 
 
 
