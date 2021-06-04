@@ -106,6 +106,11 @@ list_rep([],[]):-!.
 list_rep([H|T],[H|List]):- 
     delete_all(T,H,List1), list_rep(List1,List).
 
-
+%task16
+count_elem([], _, 0):-!.
+count_elem([H|T], H, Count):- 
+    count_elem(T, H, Count1), Count is Count1 + 1,!.
+count_elem([_|T], Elem, Count):-
+    count_elem(T, Elem, Count1), Count is Count1 + 0.
 
 
