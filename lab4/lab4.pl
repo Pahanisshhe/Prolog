@@ -8,9 +8,15 @@ write_list([]):-!.
 write_list([H|T]):-
   write(H), write(", "), write_list(T).
 
-%сумма элементов списка, рекурсия вниз
+%task2 сумма элементов списка, рекурсия вниз
 sum_list_down(List,Sum):-
   sum_list_down(List,0,Sum).
 sum_list_down([],Sum,Sum):-!.
 sum_list_down([H|T],S,Sum):-
   S1 is S + H, sum_list_down(T,S1,Sum).
+
+%task3 сумма элементов списка, рекурсия вверх
+sum_list_up([],0):-!.
+sum_list_up([H|T],Sum):-
+  sum_list_up(T,S1), Sum is H + S1.
+
