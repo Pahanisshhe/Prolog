@@ -101,6 +101,10 @@ check_elem([]):-!.
 check_elem(_,[]):-!.
 check_elem(Elem,[H|T]):- Elem \= H, check_elem(Elem,T).
 
+%task15
+list_rep([],[]):-!.
+list_rep([H|T],[H|List]):- 
+    delete_all(T,H,List1), list_rep(List1,List).
 
 
 
