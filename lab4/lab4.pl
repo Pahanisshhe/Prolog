@@ -71,4 +71,18 @@ pr_min :-
 in_list([El|_],El):-!.
 in_list([_|T],El):- in_list(T,El).
 
+%task10
+rev_list(List,RevList):-
+    rev_list(List,[],RevList).
+rev_list([],Revl,Revl):-!.
+rev_list([H|T],T1,RevList):-
+    rev_list(T,[H|T1],RevList).
+
+
+
+
+
+
+
+
 
