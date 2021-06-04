@@ -80,8 +80,15 @@ rev_list([H|T],T1,RevList):-
 
 %task11
 p([],_):-!.
-p([SubH|SubT],[H|T]):- H = SubH -> p(SubT,T) ; p([SubH|SubT],T).
+p([SubH|SubT],[H|T]):-
+    H = SubH -> p(SubT,T) ; p([SubH|SubT],T).
 
+%task12
+delete_elem(List,Number,Result):-
+    delete_elem(List,Number,0,Result).
+delete_elem([_|T],Number,Number, T):-!.
+delete_elem([H|T],Number, I,[H|T1]):-
+    I1 is I + 1, delete_elem(T,Number,I1,T1).
 
 
 
