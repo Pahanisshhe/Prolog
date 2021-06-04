@@ -78,6 +78,9 @@ rev_list([],Revl,Revl):-!.
 rev_list([H|T],T1,RevList):-
     rev_list(T,[H|T1],RevList).
 
+%task11
+p([],_):-!.
+p([SubH|SubT],[H|T]):- H = SubH -> p(SubT,T) ; p([SubH|SubT],T).
 
 
 
